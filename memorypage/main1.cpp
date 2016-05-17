@@ -1,10 +1,11 @@
 
 #include "MemoryPage.h"
 #include <iostream>
+
 using std::cout;
 using std::endl;
 
-int main()
+int main(int, char**)
 {
    cout << "Start of program" << endl;
 

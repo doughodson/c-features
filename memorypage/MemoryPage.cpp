@@ -28,6 +28,7 @@ MemoryPage& MemoryPage::operator=(const MemoryPage& other)
    delete[] buf;
    buf = new char[other.size];
    std::cout << "MemoryPage: copy assignment called\n";
+   return *this;
 }
 
 // move constructor

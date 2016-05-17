@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int main()
+int main(int, char**)
 {
    vector<MemoryPage> pages;
    pages.resize(0);

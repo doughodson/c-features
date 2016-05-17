@@ -1,5 +1,4 @@
 
-
 #include <atomic>
  
 class SpinLock
@@ -17,5 +16,4 @@ public:
 private:
     std::atomic_flag lck = ATOMIC_FLAG_INIT;
 };
-
 

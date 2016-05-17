@@ -1,6 +1,7 @@
 
-c-features
-==========
+cpp-features
+============
 
 Simple test programs to exercise new C++ features, especially platform
 specific stuff.
+
