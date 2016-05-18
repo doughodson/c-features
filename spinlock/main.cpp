@@ -22,6 +22,8 @@ void foo(int n)
  
 int main(int, char**)
 {
+   std::cout << "starting\n";
+
    std::vector<std::thread> threads;
 
    for(int n = 0; n < 8; ++n) {
@@ -32,8 +34,8 @@ int main(int, char**)
       t.join();
    }
  
-//   std::cout << "Spinlock locking\n";
-//   std::cout << "Mutex locking\n";
+   std::cout << "Spinlock locking\n";
+   std::cout << "Mutex locking\n";
 
    return count[0] + count[1] + count[2] + count[3]
         + count[4] + count[5] + count[6] + count[7];
