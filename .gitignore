@@ -30,9 +30,7 @@ codelite/
 
 # executables
 *.exe
-
-# except for premake tool
-!premake4.exe
+!build/premake/*
 
 # compiled object files
 *.[oa]
