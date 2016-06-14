@@ -1,0 +1,34 @@
+
+#
+ROOT=$PWD
+
+# ---
+# library directories
+# ---
+LIB_DIR = $(ROOT)/lib
+
+# ---
+# Optimize?
+# ---
+CXXFLAGS += -g -O2
+
+# ---
+# Modify standard flags
+# ---
+CPPFLAGS += -fPIC
+CPPFLAGS += -pthread
+CPPFLAGS += -Wall
+#CPPFLAGS += -Wextra
+CXXFLAGS += -std=c++11
+# warn of old c-style casts, so they can be replaced
+#CPPFLAGS += -Wold-style-cast
+
+# ---
+# GCC or Clang compiler selection - by default, use system
+# default compiler
+#
+# If you want to use clang, make sure to compile 3rd party libs
+# with clang - especially, Google Protocol Buffers
+# ---
+#CXX = g++
+#CXX = clang++
