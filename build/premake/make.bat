@@ -11,6 +11,6 @@ rmdir /S /Q ..\..\lib\vs2015
 rem
 rem create new solution/workspace files
 rem
-premake5-alpha8.exe vs2013
-premake5-alpha8.exe vs2015
+premake5-alpha9.exe vs2013
+premake5-alpha9.exe vs2015
 
