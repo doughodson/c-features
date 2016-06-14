@@ -6,6 +6,8 @@
 
 #define lua_c
 
+//#include "LuaState.h"
+
 #include "lprefix.h"
 
 
@@ -593,6 +595,9 @@ static int pmain (lua_State *L) {
 int main (int argc, char **argv) {
   int status, result;
   lua_State *L = luaL_newstate();  /* create state */
+
+//Luna<LuaState>::Register(L);
+
   if (L == NULL) {
     l_message(argv[0], "cannot create state: not enough memory");
     return EXIT_FAILURE;
