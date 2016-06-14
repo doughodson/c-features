@@ -2,12 +2,8 @@
 -- If premake command is not supplied an action (target compiler), exit!
 --
 -- Target of interest:
---     vs2010     (Visual Studio 2010)
---     vs2012     (Visual Studio 2012)
 --     vs2013     (Visual Studio 2013)
 --     vs2015     (Visual Studio 2015)
---     codeblocks (Code::Blocks)
---     codelite   (CodeLite)
 --
 
 -- we must have an ide/compiler specified
@@ -16,8 +12,12 @@ if (_ACTION == nil) then
 end
 
 locationPath  = "../" .. _ACTION
+if (_ACTION == "vs2013") or (_ACTION == "vs2015") then
+  targetDirPath = "../../lib/".._ACTION
+end
+print ("Target directory path: "..targetDirPath)
 
-solution "cpp-features"
+workspace "cpp-features"
 
    -- destination directory for generated solution/project files
    location (locationPath)
@@ -30,24 +30,24 @@ solution "cpp-features"
 
    --
    -- Build (solution) configuration options:
-   --     Release        (Application linked to Multi-threaded DLL)
-   --     Debug          (Application linked to Multi-threaded Debug DLL)
+   --     Release32        (Application linked to Multi-threaded DLL)
+   --     Debug32          (Application linked to Multi-threaded Debug DLL)
    --
-   configurations { "Release", "Debug" }
+   configurations { "Release32", "Debug32" }
 
    -- common release configuration flags and symbols
-   configuration { "Release" }
+   filter { "Release32" }
       flags { "Optimize" }
-      if (_ACTION == "vs2010") or (_ACTION == "vs2012") or (_ACTION == "vs2013") or (_ACTION == "vs2015") then
+      if (_ACTION == "vs2013") or (_ACTION == "vs2015") then
          -- enable compiler intrinsics and favour speed over size
          buildoptions { "/Oi", "/Ot" }
          defines { "WIN32", "NDEBUG" }
       end
 
    -- common debug configuration flags and symbols
-   configuration { "Debug" }
+   filter { "Debug32" }
       flags { "Symbols" }
-      if (_ACTION == "vs2010") or (_ACTION == "vs2012") or (_ACTION == "vs2013") or (_ACTION == "vs2015") then
+      if (_ACTION == "vs2013") or (_ACTION == "vs2015") then
          -- enable compiler intrinsics
          buildoptions { "/Oi" }
          defines { "WIN32", "_DEBUG" }
@@ -56,3 +56,5 @@ solution "cpp-features"
    -- tests
    dofile "tests.lua"
 
+   -- libs
+   dofile "libs.lua"
