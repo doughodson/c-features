@@ -17,12 +17,16 @@ vcruntime*.dll
 #
 .directory
 
+# gcc header files
+*.gch
+
 #
 # visual studio generated files
 #
 *.idb
 *.ilk
 *.pdb
+*.exp
 
 #
 # eclipse files (for now)
@@ -31,8 +35,11 @@ vcruntime*.dll
 .project
 .settings/
 
-# executables
+# windows executables
 *.exe
+# windows libraries
+*.lib
+# keep prenmake executable
 !build/premake/*
 
 # compiled object files

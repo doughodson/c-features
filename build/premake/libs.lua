@@ -1,8 +1,7 @@
 
      
--- LUA
+-- lua
 project "lua"
-   -- creating static library
    kind "StaticLib"
    -- destination directory for compiled binary target
    targetdir (targetDirPath)

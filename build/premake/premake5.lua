@@ -11,6 +11,13 @@ if (_ACTION == nil) then
   return
 end
 
+--
+-- set include and library paths
+--
+if (_ACTION == "vs2013") or (_ACTION == "vs2015") then
+   LibPath         = "../../lib/".._ACTION
+end
+
 locationPath  = "../" .. _ACTION
 if (_ACTION == "vs2013") or (_ACTION == "vs2015") then
   targetDirPath = "../../lib/".._ACTION
@@ -21,9 +28,6 @@ workspace "cpp-features"
 
    -- destination directory for generated solution/project files
    location (locationPath)
-
-   -- create console application by default
-   kind "ConsoleApp"
 
    -- C++ code in all projects
    language "C++"
@@ -46,6 +50,7 @@ workspace "cpp-features"
 
    -- common debug configuration flags and symbols
    filter { "Debug32" }
+      targetsuffix "_d"
       flags { "Symbols" }
       if (_ACTION == "vs2013") or (_ACTION == "vs2015") then
          -- enable compiler intrinsics
