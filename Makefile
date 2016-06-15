@@ -2,8 +2,10 @@
 include makedefs
 
 PROJECTS = lua-5.3.3
+PROJECTS += clips-6.30
 
 PROJECTS += testLua
+PROJECTS += testClips
 
 .PHONY: all clean $(PROJECTS)
 
