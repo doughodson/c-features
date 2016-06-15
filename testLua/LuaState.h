@@ -17,8 +17,11 @@ public:
    LuaState(lua_State*);
 
    int isAlive(lua_State*);
+   using State::isAlive;
    int getRoll(lua_State*);
+   using State::getRoll;
    int getPitch(lua_State*);
+   using State::getPitch;
 };
 
 #endif

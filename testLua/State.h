@@ -6,6 +6,7 @@ class State
 {
 public:
    State();
+   virtual ~State();
 
    // set/get
    virtual void setAlive(const bool x)                 { alive = x; return; }

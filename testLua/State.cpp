@@ -8,4 +8,5 @@ State::State()
    pitch = 0;
 }
 
-
+State::~State()
+{}
