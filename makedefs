@@ -1,11 +1,4 @@
 
-#
-ROOT=$PWD
-
-# ---
-# library directories
-# ---
-LIB_DIR = $(ROOT)/lib
 
 # ---
 # Optimize?

@@ -5,7 +5,9 @@ PGM = testLua
 
 OBJS = lua.o LuaState.o State.o
 
-LDFLAGS += -llua
+CPPFLAGS += -I../lua-5.3.3
+
+LDFLAGS += -L../lib -llua
 
 all: $(PGM)
 

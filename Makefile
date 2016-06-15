@@ -1,7 +1,7 @@
 
 include makedefs
 
-PROJECTS = lua
+PROJECTS = lua-5.3.3
 
 PROJECTS += testLua
 

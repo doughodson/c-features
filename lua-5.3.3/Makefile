@@ -1,12 +1,12 @@
 #
 include ../makedefs
 
-LIB = $(LIB_DIR)/liblua.a
+LIB = ../lib/liblua.a
 
 OBJS += \
 	lapi.o \
 	lauxlib.o \
-	baselib.o \
+	lbaselib.o \
 	lbitlib.o \
 	lcode.o \
 	lcorolib.o \
