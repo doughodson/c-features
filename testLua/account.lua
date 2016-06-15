@@ -50,4 +50,8 @@ print("Account 1: Withdrawing $"..cash)
 
 print("Account 1: New Balance is $"..a1:getBalance())
 
+local a3 = Account(100)
+a3.X = 202;
+print("X equals " .. a3.X)
+
 print("End of Script")

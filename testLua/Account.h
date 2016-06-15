@@ -2,7 +2,6 @@
 #ifndef __Account_H__
 #define __Account_H__
 
-//#pragma once
 #include "luna.h"
 
 class Account
@@ -10,6 +9,9 @@ class Account
 public:
    Account(lua_State*);
    ~Account();
+
+   int setX(lua_State*);
+   int getX(lua_State*);
 
    int deposit(lua_State*);
    int withdraw(lua_State*);
@@ -21,6 +23,7 @@ public:
 
 private:
    int balance;
+   int x;
 
 };
 

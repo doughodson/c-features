@@ -9,17 +9,16 @@
 class LuaState : public State
 {
 public:
-    // Luna C++ wrapper template declarations
-    static const char className[];
-    static const Luna<LuaState>::PropertyType properties[];
-    static const Luna<LuaState>::FunctionType methods[];
+   // Luna C++ wrapper template declarations
+   static const char className[];
+   static const Luna<LuaState>::PropertyType properties[];
+   static const Luna<LuaState>::FunctionType methods[];
 
-    LuaState()                 {};
-    LuaState(lua_State*);
+   LuaState(lua_State*);
 
-    int isAlive(lua_State*);
-    int getRoll(lua_State*);
-    int getPitch(lua_State*);
+   int isAlive(lua_State*);
+   int getRoll(lua_State*);
+   int getPitch(lua_State*);
 };
 
 #endif
