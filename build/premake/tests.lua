@@ -89,3 +89,24 @@ project "testLua"
    filter "Debug32"
       links { "lua_d" }
       links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
+
+-- testClips
+project "testClips"
+   kind "ConsoleApp"
+   targetname "testClips"
+   targetdir "../../testClips"
+   debugdir "../../testClips"
+   files {
+      "../../testClips/**.cpp",
+      "../../testClips/**.c",
+      "../../testClips/**.h"
+   }
+   includedirs { "../../clips-6.30" }
+   libdirs     { LibPath }
+   defines { "_CONSOLE" }
+   filter "Release32"
+      links { "clips" }
+      links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
+   filter "Debug32"
+      links { "clips_d" }
+      links {"Ws2_32", "Winmm", "comctl32", "gdi32"}

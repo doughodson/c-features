@@ -1,4 +1,3 @@
-
      
 -- lua
 project "lua"
@@ -11,3 +10,15 @@ project "lua"
       "../../lua-5.3.3/**.c"
    }
    targetname "lua"
+
+-- clips
+project "clips"
+   kind "StaticLib"
+   -- destination directory for compiled binary target
+   targetdir (targetDirPath)
+   files {
+      "../../clips-6.30/**.h",
+      "../../clips-6.30/**.cpp",
+      "../../clips-6.30/**.c"
+   }
+   targetname "clips"
