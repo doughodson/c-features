@@ -3,7 +3,7 @@ include ../makedefs
 
 PGM = testLua
 
-OBJS = lua.o LuaState.o State.o
+OBJS = main.o Account.o LuaState.o State.o
 
 CPPFLAGS += -I../lua-5.3.3
 
