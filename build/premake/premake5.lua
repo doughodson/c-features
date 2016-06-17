@@ -58,8 +58,11 @@ workspace "cpp-features"
          defines { "WIN32", "_DEBUG" }
       end
 
-   -- tests
-   dofile "tests.lua"
-
    -- libs
    dofile "libs.lua"
+
+   -- repl apps
+   dofile "repls.lua"
+
+   -- test apps
+   dofile "tests.lua"
