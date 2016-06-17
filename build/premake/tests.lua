@@ -69,58 +69,16 @@ project "spinlock"
    filter "Debug32"
       links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
 
--- testLua
-project "testLua"
+-- clips-repl - clips read-eval-print-loop
+project "clips-repl"
    kind "ConsoleApp"
-   targetname "testLua"
-   targetdir "../../testLua"
-   debugdir "../../testLua"
+   targetname "clips-repl"
+   targetdir "../../clips-repl"
+   debugdir "../../clips-repl"
    files {
-      "../../testLua/**.cpp",
-      "../../testLua/**.c",
-      "../../testLua/**.h"
-   }
-   includedirs { "../../lua-5.3.3" }
-   libdirs     { LibPath }
-   defines { "_CONSOLE" }
-   filter "Release32"
-      links { "lua" }
-      links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
-   filter "Debug32"
-      links { "lua_d" }
-      links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
-
--- testLuaRepl - lua read-eval-print-loop
-project "testLuaRepl"
-   kind "ConsoleApp"
-   targetname "testLuaRepl"
-   targetdir "../../testLuaRepl"
-   debugdir "../../testLuaRepl"
-   files {
-      "../../testLuaRepl/**.cpp",
-      "../../testLuaRepl/**.c",
-      "../../testLuaRepl/**.h"
-   }
-   includedirs { "../../lua-5.3.3" }
-   libdirs     { LibPath }
-   defines { "_CONSOLE" }
-   filter "Release32"
-      links { "lua" }
-      links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
-   filter "Debug32"
-      links { "lua_d" }
-      links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
-
--- testClipsRepl - clips read-eval-print-loop
-project "testClipsRepl"
-   kind "ConsoleApp"
-   targetname "testClipsRepl"
-   targetdir "../../testClipsRepl"
-   debugdir "../../testClipsRepl"
-   files {
-      "../../testClipsRepl/**.cpp",
-      "../../testClipsRepl/**.c",
-      "../../testClipsRepl/**.h"
+      "../../clips-repl/**.cpp",
+      "../../clips-repl/**.c",
+      "../../clips-repl/**.h"
    }
    includedirs { "../../clips-6.30" }
    libdirs     { LibPath }
@@ -131,3 +89,46 @@ project "testClipsRepl"
    filter "Debug32"
       links { "clips_d" }
       links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
+
+-- lua-repl - lua read-eval-print-loop
+project "lua-repl"
+   kind "ConsoleApp"
+   targetname "lua-repl"
+   targetdir "../../lua-repl"
+   debugdir "../../lua-repl"
+   files {
+      "../../lua-repl/**.cpp",
+      "../../lua-repl/**.c",
+      "../../lua-repl/**.h"
+   }
+   includedirs { "../../lua-5.3.3" }
+   libdirs     { LibPath }
+   defines { "_CONSOLE" }
+   filter "Release32"
+      links { "lua" }
+      links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
+   filter "Debug32"
+      links { "lua_d" }
+      links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
+
+-- test-lua
+project "test-lua"
+   kind "ConsoleApp"
+   targetname "testLua"
+   targetdir "../../test-lua"
+   debugdir "../../test-lua"
+   files {
+      "../../test-lua/**.cpp",
+      "../../test-lua/**.c",
+      "../../test-lua/**.h"
+   }
+   includedirs { "../../lua-5.3.3" }
+   libdirs     { LibPath }
+   defines { "_CONSOLE" }
+   filter "Release32"
+      links { "lua" }
+      links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
+   filter "Debug32"
+      links { "lua_d" }
+      links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
+

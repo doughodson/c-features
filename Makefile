@@ -4,9 +4,12 @@ include makedefs
 PROJECTS = lua-5.3.3
 PROJECTS += clips-6.30
 
-PROJECTS += testLua
-PROJECTS += testLuaRepl
-PROJECTS += testClipsRepl
+PROJECTS += lua-repl
+PROJECTS += luac
+PROJECTS += clips-repl
+
+PROJECTS += test-lua
+
 
 .PHONY: all clean $(PROJECTS)
 

@@ -55,6 +55,9 @@ mp2
 mp3
 
 # linux executables
-testLua/testLua
-testLua/testLuaRepl
-testClips/testClipsRepl
+clips-repl/clips-repl
+luac/luac
+lua-repl/lua-repl
+
+test-lua/test-lua
+

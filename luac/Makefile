@@ -1,9 +1,9 @@
 #
 include ../makedefs
 
-PGM = testLua
+PGM = luac
 
-OBJS = main.o Account.o LuaState.o State.o
+OBJS = luac.o
 
 CPPFLAGS += -I../lua-5.3.3
 
