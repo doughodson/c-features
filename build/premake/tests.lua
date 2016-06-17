@@ -90,16 +90,37 @@ project "testLua"
       links { "lua_d" }
       links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
 
--- testClips
-project "testClips"
+-- testLuaRepl - lua read-eval-print-loop
+project "testLuaRepl"
    kind "ConsoleApp"
-   targetname "testClips"
-   targetdir "../../testClips"
-   debugdir "../../testClips"
+   targetname "testLuaRepl"
+   targetdir "../../testLuaRepl"
+   debugdir "../../testLuaRepl"
    files {
-      "../../testClips/**.cpp",
-      "../../testClips/**.c",
-      "../../testClips/**.h"
+      "../../testLuaRepl/**.cpp",
+      "../../testLuaRepl/**.c",
+      "../../testLuaRepl/**.h"
+   }
+   includedirs { "../../lua-5.3.3" }
+   libdirs     { LibPath }
+   defines { "_CONSOLE" }
+   filter "Release32"
+      links { "lua" }
+      links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
+   filter "Debug32"
+      links { "lua_d" }
+      links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
+
+-- testClipsRepl - clips read-eval-print-loop
+project "testClipsRepl"
+   kind "ConsoleApp"
+   targetname "testClipsRepl"
+   targetdir "../../testClipsRepl"
+   debugdir "../../testClipsRepl"
+   files {
+      "../../testClipsRepl/**.cpp",
+      "../../testClipsRepl/**.c",
+      "../../testClipsRepl/**.h"
    }
    includedirs { "../../clips-6.30" }
    libdirs     { LibPath }

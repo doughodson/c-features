@@ -5,7 +5,8 @@ PROJECTS = lua-5.3.3
 PROJECTS += clips-6.30
 
 PROJECTS += testLua
-PROJECTS += testClips
+PROJECTS += testLuaRepl
+PROJECTS += testClipsRepl
 
 .PHONY: all clean $(PROJECTS)
 

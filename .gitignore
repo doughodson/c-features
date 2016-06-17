@@ -56,4 +56,5 @@ mp3
 
 # linux executables
 testLua/testLua
-testClips/testClips
+testLua/testLuaRepl
+testClips/testClipsRepl
