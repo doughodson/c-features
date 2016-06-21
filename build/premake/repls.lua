@@ -2,16 +2,16 @@
 -- REPL applications
 --------------------------------------------------------
 
--- clips-repl - clips read-eval-print-loop
-project "clips-repl"
+-- repl-clips - clips read-eval-print-loop
+project "repl-clips"
    kind "ConsoleApp"
-   targetname "clips-repl"
-   targetdir "../../clips-repl"
-   debugdir "../../clips-repl"
+   targetname "clips"
+   targetdir "../../repl-clips"
+   debugdir "../../repl-clips"
    files {
-      "../../clips-repl/**.cpp",
-      "../../clips-repl/**.c",
-      "../../clips-repl/**.h"
+      "../../repl-clips/**.cpp",
+      "../../repl-clips/**.c",
+      "../../repl-clips/**.h"
    }
    includedirs { "../../clips-6.30" }
    libdirs     { LibPath }
@@ -44,16 +44,16 @@ project "luac"
       links { "lua_d" }
       links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
 
--- lua-repl - lua read-eval-print-loop
-project "lua-repl"
+-- repl-lua - lua read-eval-print-loop
+project "repl-lua"
    kind "ConsoleApp"
-   targetname "lua-repl"
-   targetdir "../../lua-repl"
-   debugdir "../../lua-repl"
+   targetname "lua"
+   targetdir "../../repl-lua"
+   debugdir "../../repl-lua"
    files {
-      "../../lua-repl/**.cpp",
-      "../../lua-repl/**.c",
-      "../../lua-repl/**.h"
+      "../../repl-lua/**.cpp",
+      "../../repl-lua/**.c",
+      "../../repl-lua/**.h"
    }
    includedirs { "../../lua-5.3.3" }
    libdirs     { LibPath }
@@ -64,4 +64,5 @@ project "lua-repl"
    filter "Debug32"
       links { "lua_d" }
       links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
+
 

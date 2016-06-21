@@ -1,13 +1,18 @@
 
 include makedefs
 
+# libs
 PROJECTS = lua-5.3.3
 PROJECTS += clips-6.30
 
-PROJECTS += lua-repl
+# lua compiler
 PROJECTS += luac
-PROJECTS += clips-repl
 
+# read-eval-print-loop interpreters
+PROJECTS += repl-clips
+PROJECTS += repl-lua
+
+# specific test programs
 PROJECTS += test-lua
 
 

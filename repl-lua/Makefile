@@ -1,13 +1,13 @@
 #
 include ../makedefs
 
-PGM = clips-repl
+PGM = lua
 
-OBJS = main.o
+OBJS = lua.o
 
-CPPFLAGS += -I../clips-6.30
+CPPFLAGS += -I../lua-5.3.3
 
-LDFLAGS += -L../lib -lclips
+LDFLAGS += -L../lib -llua
 
 all: $(PGM)
 
