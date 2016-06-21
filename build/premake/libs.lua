@@ -9,6 +9,7 @@ project "lua"
       "../../lua-5.3.3/**.cpp",
       "../../lua-5.3.3/**.c"
    }
+   defines { "LUA_COMPAT_MODULE" }
    targetname "lua"
 
 -- clips

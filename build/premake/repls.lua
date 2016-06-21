@@ -57,7 +57,7 @@ project "repl-lua"
    }
    includedirs { "../../lua-5.3.3" }
    libdirs     { LibPath }
-   defines { "_CONSOLE" }
+   defines { "_CONSOLE", "LUA_COMPAT_MODULE" }
    filter "Release32"
       links { "lua" }
       links {"Ws2_32", "Winmm", "comctl32", "gdi32"}

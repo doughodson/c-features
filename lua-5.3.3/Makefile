@@ -2,6 +2,7 @@
 include ../makedefs
 
 LIB = ../lib/liblua.a
+CPPFLAGS += -DLUA_COMPAT_MODULE
 
 OBJS += \
 	lapi.o \
