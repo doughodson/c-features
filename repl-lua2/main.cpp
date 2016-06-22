@@ -4,20 +4,26 @@
 ** See Copyright Notice in lua.h
 */
 
-#define lua_c
+//#define lua_c
 
-#include "lprefix.h"
-
+#include "builtin-funcs.h"
 
 #include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-#include "lua.h"
+extern "C" {
+#include "lprefix.h"
+}
 
-#include "lauxlib.h"
-#include "lualib.h"
+#ifdef __cplusplus
+# include <lua.hpp>
+#else
+# include <lua.h>
+# include <lualib.h>
+# include <lauxlib.h>
+#endif
 
 
 #if !defined(LUA_PROMPT)
@@ -94,9 +100,6 @@
 #endif				/* } */
 
 #endif				/* } */
-
-
-
 
 static lua_State *globalL = NULL;
 
@@ -589,14 +592,18 @@ static int pmain (lua_State *L) {
   return 1;
 }
 
-
-int main (int argc, char **argv) {
-  int status, result;
+int main (int argc, char **argv)
+{
+  int status(0), result(0);
   lua_State *L = luaL_newstate();  /* create state */
   if (L == NULL) {
     l_message(argv[0], "cannot create state: not enough memory");
     return EXIT_FAILURE;
   }
+
+  // register builtin funcs
+  registerFuncs(L);
+
   lua_pushcfunction(L, &pmain);  /* to call 'pmain' in protected mode */
   lua_pushinteger(L, argc);  /* 1st argument */
   lua_pushlightuserdata(L, argv); /* 2nd argument */
@@ -606,4 +613,5 @@ int main (int argc, char **argv) {
   lua_close(L);
   return (result && status == LUA_OK) ? EXIT_SUCCESS : EXIT_FAILURE;
 }
+
 

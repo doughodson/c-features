@@ -57,6 +57,7 @@ mp3
 # linux executables
 repl-clips/repl
 repl-lua/repl
+repl-lua2/repl
 luac/luac
 
 test-lua/test-lua

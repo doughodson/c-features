@@ -1,8 +1,9 @@
 
-// C Library Headers
+#include "builtin-funcs.h"
+
+// C headers
 extern "C"
 {
-#include "builtin-funcs.h"
 #include "lua.h"
 #include "lauxlib.h"
 };
@@ -13,12 +14,12 @@ static const luaL_Reg libname [] =
     { NULL, NULL }
 };
 
-void registerFuncs(lua_State* luaVM)
+void registerFuncs(lua_State* l)
 {
-  luaL_register(luaVM, "libname", libname);
+  luaL_register(l, "libname", libname);
 }
 
-int test_string(lua_State* luaVM)
+int test_string(lua_State* l)
 {
   printf("testme\n");
   return 0;

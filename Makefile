@@ -11,10 +11,10 @@ PROJECTS += luac
 # read-eval-print-loop interpreters
 PROJECTS += repl-clips
 PROJECTS += repl-lua
+PROJECTS += repl-lua2
 
 # specific test programs
 PROJECTS += test-lua
-
 
 .PHONY: all clean $(PROJECTS)
 
