@@ -1,7 +1,7 @@
 #
 include ../makedefs
 
-PGM = clips
+PGM = repl
 
 OBJS = main.o
 

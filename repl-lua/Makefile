@@ -1,7 +1,7 @@
 #
 include ../makedefs
 
-PGM = lua
+PGM = repl
 CPPFLAGS += -DLUA_COMPAT_MODULE
 
 OBJS = lua.o

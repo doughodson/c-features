@@ -8,6 +8,7 @@
 
 #include "lprefix.h"
 
+#include "builtin-funcs.h"
 
 #include <signal.h>
 #include <stdio.h>
@@ -404,14 +405,12 @@ static void doREPL (lua_State *L) {
   int status;
   const char *oldprogname = progname;
   progname = NULL;  /* no 'progname' on errors in interactive mode */
-  printf("begin repl\n");
   while ((status = loadline(L)) != -1) {
     if (status == LUA_OK)
       status = docall(L, 0, LUA_MULTRET);
     if (status == LUA_OK) l_print(L);
     else report(L, status);
   }
-  printf("end repl\n");
   lua_settop(L, 0);  /* clear stack */
   lua_writeline();
   progname = oldprogname;
@@ -591,19 +590,6 @@ static int pmain (lua_State *L) {
   return 1;
 }
 
-
-int test_string(lua_State* luaVM)
-{
-  printf("testme\n");
-  return 0;
-}
-
-static const luaL_Reg libname [] =
-{
-    { "test_string", test_string },
-    { NULL, NULL }
-};
-
 int main (int argc, char **argv) {
   int status, result;
   lua_State *L = luaL_newstate();  /* create state */
@@ -612,7 +598,8 @@ int main (int argc, char **argv) {
     return EXIT_FAILURE;
   }
   /* register func */
-  luaL_register(L, "libname", libname);
+  /*luaL_register(L, "libname", libname); */
+  registerFuncs(L);
 
   lua_pushcfunction(L, &pmain);  /* to call 'pmain' in protected mode */
   lua_pushinteger(L, argc);  /* 1st argument */

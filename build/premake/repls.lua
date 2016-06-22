@@ -5,7 +5,7 @@
 -- repl-clips - clips read-eval-print-loop
 project "repl-clips"
    kind "ConsoleApp"
-   targetname "clips"
+   targetname "repl"
    targetdir "../../repl-clips"
    debugdir "../../repl-clips"
    files {
@@ -47,7 +47,7 @@ project "luac"
 -- repl-lua - lua read-eval-print-loop
 project "repl-lua"
    kind "ConsoleApp"
-   targetname "lua"
+   targetname "repl"
    targetdir "../../repl-lua"
    debugdir "../../repl-lua"
    files {
