@@ -4,7 +4,7 @@ include ../makedefs
 PGM = repl
 CPPFLAGS += -DLUA_COMPAT_MODULE
 
-OBJS = lua.o
+OBJS = lua.o builtin-funcs.o
 
 CPPFLAGS += -I../lua-5.3.3
 
