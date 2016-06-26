@@ -6,7 +6,7 @@
 
 //#define lua_c
 
-#include "builtin-funcs.h"
+#include "mylib.h"
 
 #include <signal.h>
 #include <stdio.h>
@@ -460,7 +460,7 @@ static int handle_script (lua_State *L, char **argv) {
 /*
 ** Traverses all arguments from 'argv', returning a mask with those
 ** needed before running any Lua code (or an error code if it finds
-** any invalid argument). 'first' returns the first not-handled argument 
+** any invalid argument). 'first' returns the first not-handled argument
 ** (either the script name or a bad argument in case of error).
 */
 static int collectargs (char **argv, int *first) {
@@ -484,7 +484,7 @@ static int collectargs (char **argv, int *first) {
         args |= has_E;
         break;
       case 'i':
-        args |= has_i;  /* (-i implies -v) *//* FALLTHROUGH */ 
+        args |= has_i;  /* (-i implies -v) *//* FALLTHROUGH */
       case 'v':
         if (argv[i][2] != '\0')  /* extra characters after 1st? */
           return has_error;  /* invalid option */
@@ -592,6 +592,20 @@ static int pmain (lua_State *L) {
   return 1;
 }
 
+static const luaL_Reg mylibs[] = {
+  {"mylib", luaopen_mylib},
+  {NULL, NULL}
+};
+
+LUALIB_API void luaL_openmylibs (lua_State *L) {
+  const luaL_Reg *lib;
+  /* "require" functions from 'loadedlibs' and set results to global table */
+  for (lib = mylibs; lib->func; lib++) {
+    luaL_requiref(L, lib->name, lib->func, 1);
+    lua_pop(L, 1);  /* remove lib */
+  }
+}
+
 int main (int argc, char **argv)
 {
   int status(0), result(0);
@@ -602,7 +616,7 @@ int main (int argc, char **argv)
   }
 
   // register builtin funcs
-  registerFuncs(L);
+  luaL_openmylibs(L);
 
   lua_pushcfunction(L, &pmain);  /* to call 'pmain' in protected mode */
   lua_pushinteger(L, argc);  /* 1st argument */
@@ -613,5 +627,3 @@ int main (int argc, char **argv)
   lua_close(L);
   return (result && status == LUA_OK) ? EXIT_SUCCESS : EXIT_FAILURE;
 }
-
-
