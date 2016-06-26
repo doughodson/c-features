@@ -12,6 +12,7 @@ PROJECTS += luac
 PROJECTS += repl-clips
 PROJECTS += repl-lua
 PROJECTS += repl-lua2
+PROJECTS += repl-lua3
 
 # specific test programs
 PROJECTS += test-lua

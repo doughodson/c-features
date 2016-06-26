@@ -58,7 +58,7 @@ mp3
 repl-clips/repl
 repl-lua/repl
 repl-lua2/repl
+repl-lua3/repl
 luac/luac
 
 test-lua/test-lua
-
