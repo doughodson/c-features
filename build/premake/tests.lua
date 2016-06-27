@@ -98,6 +98,7 @@ project "test-js"
    debugdir "../../test-js"
    files {
       "../../test-js/**.cpp",
+      "../../test-js/**.c",
       "../../test-js/**.h"
    }
    defines { "_CONSOLE" }

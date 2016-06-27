@@ -22,3 +22,5 @@ repl-lua3 - simple repl inteface to LUA that has been extended with a few C func
 spinlock - test of C++11 atomics
 
 test-lua - extending LUA with C++ class using Luna
+
+test-js - extending duktape (JS) with c function
