@@ -90,3 +90,18 @@ project "test-lua"
       links { "lua_d" }
       links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
 
+-- test-js
+project "test-js"
+   kind "ConsoleApp"
+   targetname "test-js"
+   targetdir "../../test-js"
+   debugdir "../../test-js"
+   files {
+      "../../test-js/**.cpp",
+      "../../test-js/**.h"
+   }
+   defines { "_CONSOLE" }
+   filter "Release32"
+      links {"Ws2_32", "Winmm", "comctl32", "gdi32"}
+   filter "Debug32"
+      links {"Ws2_32", "Winmm", "comctl32", "gdi32"}

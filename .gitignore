@@ -62,3 +62,4 @@ repl-lua3/repl
 luac/luac
 
 test-lua/test-lua
+test-js/hello

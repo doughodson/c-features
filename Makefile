@@ -16,6 +16,7 @@ PROJECTS += repl-lua3
 
 # specific test programs
 PROJECTS += test-lua
+PROJECTS += test-js
 
 .PHONY: all clean $(PROJECTS)
 

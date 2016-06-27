@@ -1,14 +1,9 @@
 #
 include ../makedefs
 
-PGM = repl
-#CPPFLAGS += -DLUA_COMPAT_MODULE
+PGM = test-js
 
-OBJS = main.o mylib.o
-
-CPPFLAGS += -I../lua-5.3.3
-
-LDFLAGS += -L../lib -llua
+OBJS = hello.o duktape.o
 
 all: $(PGM)
 
