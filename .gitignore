@@ -48,18 +48,3 @@ vcruntime*.dll
 # backup files
 *.bak
 
-# apps
-spin
-mp1
-mp2
-mp3
-
-# linux executables
-repl-clips/repl
-repl-lua/repl
-repl-lua2/repl
-repl-lua3/repl
-luac/luac
-
-test-lua/test-lua
-test-js/hello
